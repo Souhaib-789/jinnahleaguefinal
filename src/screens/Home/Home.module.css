@@ -1,0 +1,271 @@
+.main_heading {
+  font-size: 45px;
+  width: 90%;
+  font-weight: bold;
+}
+.main_div{ padding: 10px 130px }
+
+.sub_heading{
+  font-size: 30px;
+  font-weight: bold;
+}
+.home_view_one {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side_view {
+  background-color: var(--rgba-sec-color);
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_image {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+.restaurant_card{
+  margin: 5% 0%;
+    padding: 10px 40px ;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-self: center;
+}
+
+.main_button {
+  background-color: var(--secondary-color);
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 1px;
+  justify-content: center;
+  color: var(--white-color);
+  margin: 30px 0px;
+  box-shadow: 4px 4px var(--input-icn);
+}
+
+.main_button:hover {
+  box-shadow: 4px 4px var(--secondary-color);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 40%;
+  padding-top: 5%;
+}
+
+.span {
+  font-size: var(--heading-e);
+  line-height: 25px;
+  color: var(--input-txt);
+  margin: 3% 0%;
+}
+
+.info_card{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  align-items: flex-start;
+}
+
+.info_card_sub_view{
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+
+.card_heading{
+  font-size: var(--heading-e);
+  font-weight: bold;
+}
+
+.home_view_two{
+    margin: 7% 0%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.restaurants_view{
+  margin: 10% 0%;
+}
+.home_view_three{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.card{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2% 1%;
+  margin: 25px 0px;
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 4px 4px var(--secondary-color);
+}
+
+.card_text_view{
+  display: flex;
+  flex-direction: column;
+}
+
+.card_title{
+  font-size: var(--heading-b);
+  font-weight: 500;
+  margin: 5% 0%;
+}
+
+.card_image{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card_button{
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 3%;
+  border-radius: 5px;
+  color: azure;
+  margin-top: 5%;
+}
+
+.home_view_four{
+  display: flex;
+  justify-content: space-between;
+  margin: 10% 0%;
+}
+
+.banner_image{
+  width: 400px;
+  height: 300px;
+  border-top-left-radius: 150px !important;
+  z-index: 1;
+}
+
+.banner_sub_view{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.bg_bubble_c{
+  width: 170px;
+  height: 170px;
+  border-radius: 100px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  left: 450px;
+  /* top: 1000px; */
+}
+
+body{
+  background-color: var(--light-grey);
+}
+
+
+@media screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 900px) {
+  .main_div{ padding: 10px 20px }
+
+ .bg_bubble_c{display: none;}
+ 
+}
+
+@media only screen and (max-width: 576px) {
+
+  .main_heading {
+    font-size: 30px;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .main_div{ padding: 10px 10px }
+
+  .home_view_one {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    margin-bottom: 30%;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+    padding-top: 5%;
+  }
+
+  .side_view {
+    background-color: var(--rgba-sec-color);
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+  }
+  
+  .main_image {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+  }
+
+  .sub_heading{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .home_view_three{
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .banner_image{
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 150px !important;
+    z-index: 1;
+  }
+
+  .home_view_four{
+    display: flex;
+    flex-direction: column;
+    margin: 15% 0%;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner_sub_view{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 10% 0%;
+   text-align: center;
+  }
+
+}
