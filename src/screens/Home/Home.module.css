@@ -9,12 +9,39 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+.chart_container{
+  background-color: white;
+  padding: 0% 3%; 
+  border-radius: 15px;
+}
+
+.heading_view{
+  background-color: white;
+  padding: 3% 4%;
+  border-radius: 10px;
+}
+
+.heading_view text{
+ font-size: 25px;
+ font-weight: bold;
+}
+
+.add_icon{
+  width: 120px;
+  height: 120px;
+}
+
+
 .home_view_one {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
+  background-color: #7745f9 ;
+  border-radius: 10px;
+  padding: 3% 5%;
+margin-top: 5%;}
 
 .side_view {
   background-color: var(--rgba-sec-color);
@@ -32,13 +59,14 @@
   object-fit: contain;
 }
 .restaurant_card{
-  margin: 5% 0%;
-    padding: 10px 40px ;
+  margin: 1% 0%;
+  padding: 2%;
 border-radius: 5px;
 display: flex;
-flex-direction: column;
-align-self: center;
-}
+flex-direction: row;
+justify-content: space-between;
+width: 80%;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
 
 .main_button {
   background-color: var(--secondary-color);
@@ -102,9 +130,10 @@ align-self: center;
 }
 .home_view_three{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-top: 3%;
 
 }
 .card{
@@ -127,7 +156,6 @@ align-self: center;
 .card_title{
   font-size: var(--heading-b);
   font-weight: 500;
-  margin: 5% 0%;
 }
 
 .card_image{
@@ -268,4 +296,53 @@ body{
    text-align: center;
   }
 
+  .restaurant_card{
+    margin: 3% 0%;
+    padding: 5%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  }
+
+  .card_title{
+    font-size: var(--heading-e);
+    font-weight: 500;
+  }
+
+  .sub_heading{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 0%;
+    margin-bottom: 15%;
+    text-align: center;
+  }
+
+
+  .heading_view{
+    background-color: white;
+    padding: 5% 5%;
+    margin: 10% 0%;
+    border-radius: 5px;
+  }
+  
+  .heading_view text{
+   font-size: 15px;
+   font-weight: bold;
+  }
+
+  .chart_container{
+    background-color: white;
+    padding: 0% 5%; 
+    border-radius: 15px;
+  }
+
+  .add_icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-self: flex-end;
+    margin: 3%;
+  }
 }

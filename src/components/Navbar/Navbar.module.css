@@ -10,6 +10,15 @@
   margin-left: 5%;
 }
 
+.heading{
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 35px;
+  margin-left: 10%;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+  0px -4px 10px rgba(255,255,255,0.3);
+}
+
 .cart_button {
   border-radius: 50px;
   width: 50px;
@@ -17,7 +26,8 @@
   border-radius: 40px !important;
   background-color: var(--secondary-color) !important;
   border: none !important;
-  box-shadow: 1px 2px 2px 1px var(--l-pink);
+  box-shadow: 1px 5px 5px 1px grey
+  ;
 }
 
 .navbar_end_view{
@@ -72,5 +82,13 @@ padding: 0% 5px;
 
 @media only screen and (max-width: 576px) {
 
+  .heading{
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: 10%;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+  }
 
 }

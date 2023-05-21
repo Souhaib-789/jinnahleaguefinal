@@ -1,122 +1,133 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
-import MainImage from "../../assets/main_image.png";
-import { AiOutlineFileDone } from "react-icons/ai";
-import { RiSecurePaymentFill } from "react-icons/ri";
-import { FaShippingFast } from "react-icons/fa";
-import BannerImage from '../../assets/illustration.png'
-import { useNavigate } from "react-router";
-import { categories } from "../../assets/dummyapi";
+import { MdAddCircle } from "react-icons/md";
+import Navbar from "../../components/Navbar/Navbar";
+import { DemoPie } from "../../components/chart/chart";
+import CustomizedDialogs from "../../components/modal/modal";
 
 
-const Home = () => {
-  
-  const [restaurants , setrestaurants] = useState([])
-  const navigate = useNavigate();
+const Home = (props) => {
+
+  const [openModal, setopenModal] = useState(false)
+  const [category, setcategory] = useState()
+  const [amount, setamount] = useState()
+  const [descrption, setdescription] = useState()
+
 
   useEffect(() => {
-   getData();
+    fetch('http://localhost:5000/api/finance')
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((error) => console.error(error))
+      // .finally(() => setLoading(false));
   }, []);
 
-  const getData = () => {
-    fetch('www.themealdb.com/api/json/v1/1/categories.php')
-    .then((response) => response.json())
-    .then((json) =>  console.log('========',json))
-    .catch((error) => console.error(error))
-    // .finally(() => setLoading(false));
-  }
-  
-  const info = [
+
+  const data = [
     {
-      id: 1,
-      name: 'Secure Payment',
-      description: 'Lorem ipsum is a placeholder text commonly used to demonstrate the dummy text',
-      icon: <RiSecurePaymentFill size={50} color={"#f6371e"} />
+      type: 'Medicine',
+      value: 27,
     },
     {
-      id: 2,
-      name: 'Best Quality',
-      description: 'Lorem ipsum is a placeholder text commonly used to demonstrate the dummy text',
-      icon: <AiOutlineFileDone size={50} color={"#1e6af6"} />
+      type: 'Hospital',
+      value: 25,
     },
     {
-      id: 1,
-      name: 'Easy Delivery',
-      description: 'Lorem ipsum is a placeholder text commonly used to demonstrate the dummy text',
-      icon: <FaShippingFast size={50} color={"#1ef666af"} />
+      type: 'Birthday party',
+      value: 18,
     },
-  ]
+    {
+      type: 'Wedding',
+      value: 15,
+    },
+    {
+      type: 'Show',
+      value: 10,
+    },
+    {
+      type: 'Ramzan',
+      value: 5,
+    },
+  ];
 
-
-  return (
-    <div className={styles.main_div}>
-      <div className={styles.home_view_one}>
-        <div className={styles.flex} data-aos="fade-right">
-          <text className={styles.main_heading}>Discover Restaurants that Deliver Near You</text>
-          <text className={styles.span}>
-            Lorem ipsum is a placeholder text commonly used to demonstrate the
-            visual form of a document or a typeface without relying on
-            meaningful content.
-          </text>
-
-          <button className={styles.main_button} >Learn More</button>
-        </div>
-        <div className={styles.side_view} data-aos="fade-left">
-          <img src={MainImage} className={styles.main_image} />
-        </div>
-      </div>
-
-
-      {/* <div className={styles.home_view_two}>
+  const onClickAddAmount = () => {
+    if (!category) {
+      alert('Please select category first')
+    }
+    else if (!amount) {
+      alert('Please enter amount')
+    } 
+    else if (!descrption) {
+      alert('Please enter description')
+    }
+    else{
+      setopenModal(false)
+      let finance = [
         {
-          info.map((item, index) => {
-            return (
-              <div className={styles.info_card}>
-                <div>{item?.icon}</div>
-                <div className={styles.info_card_sub_view}>
-                  <text className={styles.card_heading}>{item?.name}</text>
-                  <text>{item?.description}</text>
-                </div>
-              </div>
-            )
-          })
+          uid: 1,
+          amount: amount,
+          category: category,
+          description: descrption
         }
-      </div> */}
+      ]
 
-      <div className={styles.restaurants_view} id="pop">
-        <text className={styles.sub_heading}>Available Restaurants</text>
-        <div className={styles.home_view_three}>
+      console.log('----------------', finance);
+    }
+  }
+  return (
+    <>
+
+      <Navbar />
+      <div className={styles.main_div}>
+        <div className={styles.home_view_one}>
+
+          <div className={styles.chart_container}>
+            <DemoPie data={data} />
+          </div>
+          <div className={styles.heading_view}>
+            <text>Income : Rs. 5000 /-</text>
+          </div>
+          <MdAddCircle  color='white' onClick={() => setopenModal(true)}  className={styles.add_icon} />
+
+        </div>
+
+
+        <div className={styles.restaurants_view} id="pop">
+          <text className={styles.sub_heading}>My Expenses</text>
+          {/* <div className={styles.home_view_three}>
           {
             categories?.map((item, index) => {
               return (
                 <div className={styles.restaurant_card}>
-                <img src={item?.strCategoryThumb} className={styles.card_image} />
-                <div className={styles.card_text_view}>
-                  <text className={styles.card_title}>{item?.strCategory}</text>
-                  <text style={{ color: 'grey', fontSize: '12px' }}>{item?.location}</text>
-                 
-                  <button className={styles.card_button} onClick={()=> navigate('restaurent')}>VISIT</button>
-                </div>
+                
+                  <text className={styles.card_title}>Medicine </text>        
+                  <text className={styles.card_title}>Rs. 3000 /- </text>          
+               
               </div>
               )
             })
           }
 
+        </div> */}
+
         </div>
 
-      </div>
+        <CustomizedDialogs
+          categoryValue={category}
+          setCategory={(e) => setcategory(e.target.value)}
 
-      <div className={styles.home_view_four}>
-        <div className={styles.bg_bubble_c}></div>
-        <img src={BannerImage} className={styles.banner_image} />
-        <div className={styles.banner_sub_view}>
-          <text className={styles.sub_heading}>Buy the best food of your favorite choice</text>
-          <text className={styles.span}>Lorem ipsum is a placeholder text commonly used to demonstrate the
-            visual form of a document or a typeface without relying on</text>
-        </div>
-      </div>
+          amountValue={amount}
+          setAmount={(e) => setamount(e.target.value)}
 
-    </div>
+          descriptionValue={descrption}
+          setDescription={(e) => setdescription(e.target.value)}
+
+          visible={openModal}
+          onClose={() => setopenModal(false)}
+          Add={onClickAddAmount}
+        />
+      </div>
+    </>
   );
 };
 

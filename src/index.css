@@ -14,7 +14,7 @@ code {
 
 :root {
   --primary-color: #181818;
-  --secondary-color: #fe043c;
+  --secondary-color: #7745f9;
   --rgba-sec-color: rgba(254,4,60, 0.9);
   --pink-color: #de5d82;
   --l-pink: rgba(222, 93, 130, 0.4);
@@ -53,4 +53,91 @@ code {
   --text: 14px;
   --mobile-text: 12px;
   --mobile-short-text: 10px;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.main-heading{
+  text-align: center;
+  color: var(--secondary-color);
+  margin-top: 10% ;
+  font-weight: bold;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+  0px -4px 10px rgba(255,255,255,0.3);
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 35%;
+}
+
+
+.form-container form h2 {
+  text-align: center;  
+}
+
+.btn-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-container a {
+  text-decoration: 'none';
+  color: var(--secondary-color) !important;
+}
+
+
+@media only screen and (min-width: 700px) and (max-width: 1115px) {
+  .form-container img {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .form-container form {
+    width: 60% !important;
+  }
+
+  .form-container form h2 {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .form-container img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form-container form {
+    width: 90% !important;
+
+
+  }
+
+
+  .main-heading{
+    text-align: center;
+    color: var(--secondary-color);
+    margin-top: 10% ;
+    font-weight: bold;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+  }
 }
